@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
 const app = express()
+const PORT = process.env.PORT || 3000;
 
 
 const server = http.createServer(app)
@@ -57,6 +58,6 @@ io.on('connection', (socket) => {
 })
 
 // usually this is where we try to connect to our DB.
-server.listen(8000, () => {
-    console.log('listening on port 8000')
+server.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
 })
