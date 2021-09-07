@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
                         io.to(map.get(roomId)[1][1]).emit("changePlayer")
                     }
                     else if(list.length==1){
-                        io.to(map.get(roomId)[1][0]).emit("enable")
+                        io.to(map.get(roomId)[1][0]).emit("disable")
                     }
                 } 
                 break;
