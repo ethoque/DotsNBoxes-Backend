@@ -26,6 +26,8 @@ io.on('connection', (socket) => {
     if(map.get(roomId)[1].length == 2 ){
         io.to(roomId).emit("restart")
         io.to(map.get(roomId)[1][0]).emit("playerOne")
+        io.to(map.get(roomId)[1][0]).emit("enable")
+        io.to(map.get(roomId)[1][1]).emit("enable")
         socket.emit("changePlayer")
     }
     if(map.get(roomId)[1].length > 2){
